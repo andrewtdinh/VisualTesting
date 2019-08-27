@@ -3,10 +3,10 @@ var Nightmare = require("nightmare");
   var nightmare = new Nightmare({ show: true });
   nightmare
     .viewport(540, 960)
-    .goto("https://gethoodie.com/auth")
-    .click(".login")
+    .goto("https://demo.sightmachine.io/auth/login?next=%2F")
+    .click("#email")
     .wait(200)
-    .type(".login-email-input", "test@testtesttest.com")
+    .type("input#email", "sighty@sightmachine.io")
     .type(".login-password-input", "testpassword")
     .click(".login-submit")
     .wait(1000)
