@@ -6,7 +6,7 @@ var Nightmare = require("nightmare");
     .goto("https://demo.sightmachine.io/auth/login?next=%2F")
     .click("#email")
     .wait(200)
-    .type("input#email", "sighty@sightmachine.io")
+    .type("input#email", "psychie@sightmachine.io")
     .wait(500)
     .type("body", "\u000d")
     .type("input#password", "testing")
