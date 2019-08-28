@@ -9,17 +9,6 @@ describe('Differencify', () => {
   afterAll(async () => {
     await differencify.cleanup();
   });
-  it('simple unchained', async () => {
-    const target = differencify.init({ chain: false });
-    const page = await target.newPage();
-    await page.goto('https://demo.sightmachine.io/');
-    await page.setViewport({ width: 1600, height: 1200 });
-    await page.waitFor(1000);
-    const image = await page.screenshot();
-    const result = await target.toMatchSnapshot(image);
-    await page.close();
-    expect(result).toEqual(true);
-  }, 30000);
   it('Launch new browser per test when unchained', async () => {
     const target = differencify.init({ chain: false });
     await target.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
@@ -49,17 +38,17 @@ describe('Differencify', () => {
             imageType: 'png',
             isJest: true,
             isUpdate: false,
-            testId: 6,
+            testId: 3,
             testName: 'Differencify Using toMatchSnapshot callback for result details',
             testNameProvided: false,
-            testPath: '/differencify/src/sm/sm1.test.js',
+            testPath: '/Users/andrewd/Personal/VisualTesting/differencify/src/sm/sm1.test.js',
           },
           testResult: {
             diffPercent: 0,
             distance: 0,
             matched: true,
             snapshotPath:
-              '/differencify/src/sm/__image_snapshots__/Differencify Using toMatchSnapshot callback for result details.snap.png',
+              '/Users/andrewd/Personal/VisualTesting/differencify/src/sm/__image_snapshots__/Differencify Using toMatchSnapshot callback for result details.snap.png',
           },
         });
       })
