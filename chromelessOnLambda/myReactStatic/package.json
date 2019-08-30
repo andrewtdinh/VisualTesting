@@ -7,7 +7,7 @@
     "build": "react-static build",
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000",
-    "test": "jest --runInBand --setupFiles='<rootDir>/jest/setup.default.js'"
+    "test": "jest --runInBand --detectOpenHandles --setupFiles='<rootDir>/jest/setup.default.js'"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",

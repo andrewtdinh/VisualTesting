@@ -1,5 +1,7 @@
-beforeAll(() => { chromeless = setup(); });
-afterAll(async () => { await teardown(chromeless); });
+import { setup, teardown } from '../jest/test.utils.js';
+
+beforeAll(() => { chromeless = setup() });
+afterAll(async () => { await teardown(chromeless) });
 
 test("+++ home renders correctly", async () => {
   const html = await chromeless
